@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      {{ title }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,45 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">{{ title }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-row>
+    <ion-col class="fond-temp">
+      <ion-text class="ion-text-center" color="light">
+        <h1>{{ temp }}°C</h1>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center" >
+      <ion-img src="https://openweathermap.org/img/wn/{{ icon }}@4x.png" title="{{ description }}" alt="icon {{ description }}"></ion-img>
+      <h5>{{ description }}</h5>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-text class="ion-text-center">
+        <h2>{{ city }}</h2>
+      </ion-text>
+    </ion-col>
+  </ion-row>
 </ion-content>
+<ion-row>
+  <ion-list>
+    <ion-item>
+      <ion-col size="auto">
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button>🔍</ion-button>
+      </ion-col>
+    </ion-item>
+  </ion-list>
+
+</ion-row>
+
+<ion-footer>
+  <ion-button expand="block">Mettre à jour</ion-button>
+</ion-footer>
